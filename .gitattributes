@@ -1,0 +1,2 @@
+MODEL/Model.mix/model.pth filter=lfs diff=lfs merge=lfs -text
+FUZZER/nn_server/model.pth filter=lfs diff=lfs merge=lfs -text

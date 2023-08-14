@@ -1,0 +1,25 @@
+command:
+  - ${env}
+  - python
+  - ${program}
+  - ${args}
+program: main.py
+method: bayes
+metric:
+  goal: minimize
+  name: train loss
+
+parameters:
+  dataset:
+    value: "/home/ubuntu/SweepTest/trainingset"
+  conv_layers:
+    values: [5, 6, 7]
+  pool_ratio:
+    values: [0.2, 0.3, 0.4, 0.5, 0.6]
+  line_layers:
+    values: [7, 8, 9]
+  batch_size:
+    values: [32, 48, 64]
+  epochs:
+    value: 100
+
