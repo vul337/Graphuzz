@@ -1,8 +1,8 @@
 # Graphuzz
 Graphuzz has four components：
-    - FUZZER: for FUZZING
-    - MODEL: for MODEL training
-    - PREPROCESS: for INSTRUMENTATION and seed ESTIMATION
+- FUZZER: for FUZZING
+- MODEL: for MODEL training
+- PREPROCESS: for INSTRUMENTATION and seed ESTIMATION
 
 ## FUZZING WORKFLOWS
 BUILD PREPROCESS
