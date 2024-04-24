@@ -56,8 +56,8 @@ export AFL_NO_UI=1
 ## TRAINING SET GENERATION
 1. Prepare enough seeds (more than 2048 seeds)
 2. Run each seed for 30 minutes (as described in our paper), and record the initial bitmap and last bitmap. We provide a program to do this work (`/PATH_TO_Graphuzz/PREPROCESS/afl-evaluator`). Use this program like `./afl-evaluator -I ~/TEST/pcapplusplus/seeds/default/queue -O ~/TEST/pcapplusplus/output_30 -B  ~/TEST/pcapplusplus/FuzzTarget`.
-3. Generate TRAINING SET. For example, run `python3 /PATH_TO_Graphuzz/PREPROCESS/Extractor/exportTrainingSet.py THE_DIR_OF_CDFG.PKL THE_DIR_OF_CDFG.PKL ~/TEST/pcapplusplus/output_30 ~/TRAININGSET/trainingset_libmpeg2`.
-4. Normalize the labels. `python preprocess.py ~/TRAININGSET/trainingset_libmpeg2 ~/TRAININGSET/trainingset_libmpeg2_norm`
+3. Generate TRAINING SET. For example, run `python3 /PATH_TO_Graphuzz/PREPROCESS/Extractor/exportTrainingSet.py THE_DIR_OF_CDFG.PKL THE_DIR_OF_CDFG.PKL ~/TEST/pcapplusplus/output_30 ~/TRAININGSET/trainingset_pcapplusplus`.
+4. Normalize the labels. `python preprocess.py ~/TRAININGSET/trainingset_pcapplusplus ~/TRAININGSET/trainingset_pcapplusplus_norm`
 5. Sampling multiple software generated training sets and composing a new hybrid training set. For example, `for x in {A,B,C,D}; do ls ~/TRAININGSET/trainingset_${x}_norm | sort -R | head -30000 | xargs -I {} cp ~/TRAININGSET/trainingset_$x_norm/{} ~/trainingset_cross/ ; done`
 
 
